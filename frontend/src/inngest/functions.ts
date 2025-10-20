@@ -98,7 +98,7 @@ export const photoToVideo = inngest.createFunction(
                 seed: 42,
                 acceleration: "regular",
               },
-              webhookUrl: `${process.env.VERCEL_URL}/api/fal`,
+              webhookUrl: `${env.WEB_URL}/api/fal`,
             });
           });
 
@@ -232,7 +232,7 @@ export const translateVideo = inngest.createFunction(
               target_language: videoTranslation.targetLanguage as | "hindi" | "turkish" | "english",
               do_lipsync: true,
             },
-            webhookUrl: `${process.env.VERCEL_URL}/api/fal`,
+            webhookUrl: `${env.WEB_URL}/api/fal`,
           });
         });
 
@@ -335,7 +335,7 @@ export const changeVideoAudio = inngest.createFunction(
               model: "lipsync-1.9.0-beta",
               sync_mode: "cut_off",
             },
-            webhookUrl: `${process.env.VERCEL_URL}/api/fal`,
+            webhookUrl: `${env.WEB_URL}/api/fal`,
           });
         });
 
