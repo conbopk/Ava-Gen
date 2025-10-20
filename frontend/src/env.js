@@ -23,7 +23,6 @@ export const env = createEnv({
     FAL_KEY: z.string(),
     POLAR_ACCESS_TOKEN: z.string(),
     POLAR_WEBHOOK_SECRET: z.string(),
-    VERCEL_URL: z.string().url(),
   },
 
   /**
@@ -60,7 +59,6 @@ export const env = createEnv({
     NEXT_PUBLIC_SMALL_CREDIT_PACK_ID: process.env.NEXT_PUBLIC_SMALL_CREDIT_PACK_ID,
     NEXT_PUBLIC_MEDIUM_CREDIT_PACK_ID: process.env.NEXT_PUBLIC_MEDIUM_CREDIT_PACK_ID,
     NEXT_PUBLIC_LARGE_CREDIT_PACK_ID: process.env.NEXT_PUBLIC_LARGE_CREDIT_PACK_ID,
-    VERCEL_URL: process.env.VERCEL_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

@@ -3,6 +3,7 @@ import {db} from "~/server/db";
 import {env} from "~/env";
 import {fal} from "@fal-ai/client";
 import {getPresignedUrl} from "~/lib/s3";
+import * as process from "node:process";
 
 fal.config({
   credentials: env.FAL_KEY,
@@ -97,7 +98,7 @@ export const photoToVideo = inngest.createFunction(
                 seed: 42,
                 acceleration: "regular",
               },
-              webhookUrl: `${env.VERCEL_URL}/api/fal`,
+              webhookUrl: `${process.env.VERCEL_URL}/api/fal`,
             });
           });
 
@@ -231,7 +232,7 @@ export const translateVideo = inngest.createFunction(
               target_language: videoTranslation.targetLanguage as | "hindi" | "turkish" | "english",
               do_lipsync: true,
             },
-            webhookUrl: `${env.VERCEL_URL}/api/fal`,
+            webhookUrl: `${process.env.VERCEL_URL}/api/fal`,
           });
         });
 
@@ -334,7 +335,7 @@ export const changeVideoAudio = inngest.createFunction(
               model: "lipsync-1.9.0-beta",
               sync_mode: "cut_off",
             },
-            webhookUrl: `${env.VERCEL_URL}/api/fal`,
+            webhookUrl: `${process.env.VERCEL_URL}/api/fal`,
           });
         });
 
