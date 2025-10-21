@@ -3,7 +3,6 @@ import {db} from "~/server/db";
 import {env} from "~/env";
 import {fal} from "@fal-ai/client";
 import {getPresignedUrl} from "~/lib/s3";
-import * as process from "node:process";
 
 fal.config({
   credentials: env.FAL_KEY,
